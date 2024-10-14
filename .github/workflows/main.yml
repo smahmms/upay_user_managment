@@ -2,9 +2,9 @@
 
  on:
   push:
-    branches: [ uat ]
+    branches: [ main ]
   pull_request:
-    branches: [ uat ]
+    branches: [ main ]
 
  jobs:
 
@@ -34,7 +34,7 @@
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/upay_user_managment_uat:${{github.run_number}} 
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/upay_user_managment_poly:${{github.run_number}} 
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
